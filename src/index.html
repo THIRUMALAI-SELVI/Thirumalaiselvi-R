@@ -4,16 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Drawing App</title>
+    <title>Theme Clock</title>
   </head>
   <body>
-    <canvas id="canvas" width="800" height="700"></canvas>
-    <div class="toolbox">
-      <button id="decrease">-</button>
-      <span id="size">10</span>
-      <button id="increase">+</button>
-      <input type="color" id="color" />
-      <button id="clear">X</button>
+    <button class="toggle">Dark mode</button>
+    <div class="clock-container">
+      <div class="clock">
+        <div class="needle hour"></div>
+        <div class="needle minute"></div>
+        <div class="needle second"></div>
+        <div class="center-point"></div>
+      </div>
+      <div class="time"></div>
+      <div class="date"></div>
     </div>
     <script src="script.js"></script>
   </body>
