@@ -1,137 +1,68 @@
-@import url("https://fonts.googleapis.com/css?family=Heebo:300&display=swap");
-
 * {
   box-sizing: border-box;
-}
-
-:root {
-  --primary-color: #000;
-  --secondary-color: #fff;
-}
-
-html {
-  transition: all 0.5s ease-in;
-}
-
-html.dark {
-  --primary-color: #fff;
-  --secondary-color: #333;
-}
-
-html.dark {
-  background-color: #111;
-  color: var(--primary-color);
-}
-
-body {
-  font-family: "Heebo", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  overflow: hidden;
   margin: 0;
 }
 
-.toggle {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  border: 0;
-  border-radius: 4px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
+.calculator {
+  background-color: #f2f2f2;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  border: solid 1px #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  margin-top: 40px;
 }
 
-.toggle:focus {
-  outline: none;
+#result{
+    width: 100%;
+    padding: 10px;
+    font-size: 24px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3) inset;
+    border-radius: 5px;
 }
 
-.clock-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin-top: 20px;
 }
 
-.clock {
-  position: relative;
-  width: 200px;
-  height: 200px;
+button{
+    padding: 10px;
+    font-size: 24px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
 }
 
-.needle {
-  background-color: var(--primary-color);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: 65px;
-  width: 3px;
-  transform-origin: bottom center;
-  transition: all 0.5s ease-in;
+button:hover{
+    background-color: #ddd;
 }
 
-.needle.hour {
-  transform: translate(-50%, -100%) rotate(0deg);
+.clear{
+    background-color: #ff4136;
+    color: #fff;
 }
 
-.needle.minute {
-  transform: translate(-50%, -100%) rotate(0deg);
-  height: 100px;
+.number, .decimal{
+    background-color: #fff;
+    color: #333;
+
 }
 
-.needle.second {
-  background-color: #e74c3c;
-  transform: translate(-50%, -100%) rotate(0deg);
-  height: 100px;
+.operator{
+    background-color: #0074d9;
+    color: #fff;
 }
 
-.center-point {
-  background-color: #e74c3c;
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-}
-
-.center-point::after {
-  content: "";
-  background-color: var(--primary-color);
-  width: 5px;
-  height: 5px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-}
-
-.time {
-  font-size: 60px;
-}
-
-.date {
-  color: #aaa;
-  font-size: 14px;
-  letter-spacing: 0.3px;
-  text-transform: uppercase;
-}
-
-.date .circle {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  border-radius: 50%;
-  height: 18px;
-  width: 18px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  line-height: 18px;
-  transition: all 0.5s ease-in;
+.equals{
+    background-color: #01ff70;
+    grid-row: span 3;
+    color: #fff;
 }
